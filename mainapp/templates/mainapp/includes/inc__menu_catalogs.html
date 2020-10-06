@@ -1,0 +1,7 @@
+
+		<ul class="menu">
+			<li><a class="menu-link" href="{% url 'main:catalog_products' pk=0 %}">Все</a></li>
+			{% for category in categories %}
+			 <li><a class="menu-link" href="{% url 'main:catalog_products' pk=category.pk %}">{{ category.name }}</a></li>
+			{% endfor %}
+		</ul>

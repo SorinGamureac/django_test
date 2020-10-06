@@ -1,55 +1,90 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Интернет магазин СмартПеченька</title>
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-</head>
-<body>
-	<header class="container">	
-		<div class="header1">
-		<!-- 	<div class="block"> -->
-			<img class="logo block2" src="img/logo.png" alt="logo" height="100">
-		<!-- 	</div> -->
-			<ul class="menu block">
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-		 		<li><a class="menu-link" href="index.html">Главная</a></li>
-				<li><a class="menu-link" href="catalog.html">Каталог</a></li>
-				<li><a class="menu-link" href="contacts.html">Контакты</a></li>
-			</ul> 		
+{% block content %}
+<div class="container">
 
-		</div>
+	<div class="header1">
+	<!-- 	<div class="block"> -->
+		<img class="logo block2" src="{% static 'img/logo.png' %}" alt="logo" height="100">
+	<!-- 	</div> -->
+		<ul class="menu block">
 
+			 <li><a class="menu-link" href="{% url 'main:index' %}">Главная</a></li>
+			<li><a class="menu-link" href="{% url 'main:catalog' %}">Каталог</a></li>
+			<li><a class="menu-link" href="{% url 'main:contacts' %}">Контакты</a></li>
+			{% if user.is_authenticated %}
+            <li>
+                <div class="dropdown">
+                    <a class="menu-link dropdown-toggle" href="" data-toggle="dropdown">
+                        {{ user.first_name|default:'Пользователь' }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'auth:user_profile' %}">
+                                профиль
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'orders:index' %}">
+                                заказы
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        {% endif %}
+        {% if user.is_superuser %}
+            <li><a class="menu-link" href="{% url 'myadmin:index' %}">
+                админка
+            </a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <li><a class="menu-link" href="{% url 'auth:logout' %}">
+                выход
+            </a></li>
+        {% else %}
+           <li><a class="menu-link" href="{% url 'auth:login' %}">
+                вход
+            </a></li>
+        {% endif %}
+		</ul>
+        <a href="#" class="search"></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'basket:index' %}" class="basket menu-link">
+                <span>{{ user.basket_cost|floatformat:0 }} руб ({{ user.basket_total_quantity }} шт)</span>
+            </a>
+        {% endif %}
+
+	</div>
 		<hr>
-	</header>
-	<main class="container">
-		<h1>Напишите нам</h1>
+<main class="container">
+	<h1>Напишите нам</h1>
 
-		<form action="">
-			<label for="fname">Имя</label><br>
-			<input class="form-class" type="text" id="fname" name="fname"><br>
-			<label for="lname">E-mail</label><br>
-			<input class="form-class" type="E-mail" id="lname" name="lname"><br>
-			<label for="subject">Тема</label><br>
-			<input class="form-class" type="Тема" id="subject" name="subject"><br>
-			<p>Текстовое поле</p>
-			<textarea class="form-class" cols="20" rows="5"></textarea><br>
-			<input type="submit" value="Отправить"><br>
-		</form>
-		<h1>Адрес</h1>
-		<p>Контактный номер - xxxxxxxxx</p>
-		<p>Адрес - Пиченкина 11</p>
-		<p>Е-mail - smartpicenki@gmail.com</p>
+	<form action="">
+		<label for="fname">Имя</label><br>
+		<input class="form-class" type="text" id="fname" name="fname"><br>
+		<label for="lname">E-mail</label><br>
+		<input class="form-class" type="E-mail" id="lname" name="lname"><br>
+		<label for="subject">Тема</label><br>
+		<input class="form-class" type="Тема" id="subject" name="subject"><br>
+		<p>Текстовое поле</p>
+		<textarea class="form-class" cols="20" rows="5"></textarea><br>
+		<input type="submit" value="Отправить"><br>
+	</form>
+	{% for location in locations %}
+	<h1>Адрес</h1>
+	<p>Контактный номер - {{ location.phone }}</p>
+	<p>Адрес - {{ location.street }}</p>
+	<p>Е-mail - {{ location.email }}</p>
+	{% endfor %}
 
-		<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d1359.7771755977585!2d28.83852!3d47.029352!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d47.0291104!2d28.8383044!5e0!3m2!1sen!2sus!4v1590851601779!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m8!1m3!1d1359.7771755977585!2d28.83852!3d47.029352!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d47.0291104!2d28.8383044!5e0!3m2!1sen!2sus!4v1590851601779!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-	</main>
-	<footer class="container">
-		<div class="footer">
-		<hr>
-		<p>«&copy; Все права защищены»</p>
-		</div>
-	</footer>								
-	
-</body>
-</html>				
+</main>
+<footer>
+	{% include 'mainapp/includes/inc__footer.html' %}
+</footer>		
+
+{% endblock %}

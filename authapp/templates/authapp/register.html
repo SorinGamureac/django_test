@@ -1,0 +1,13 @@
+{% extends 'authapp/base.html' %}
+
+{% block container %}
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="form-control" value="зарегистрироваться">
+    </form>
+    <a href="{% url 'mainapp:index' %}"
+       class="btn btn-round form-control">
+        на главнаю
+    </a>
+{% endblock %}

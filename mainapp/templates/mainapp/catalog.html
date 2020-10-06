@@ -1,125 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Интернет магазин СмартПеченька</title>
-	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-	crossorigin="anonymous">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-</head>
-<body>
-	<div class="container">
-		<div class="header1">
-			<img class="logo block2" src="/static/img/logo.png" alt="logo" height="100">
-			<ul class="menu block">
-		 		<li><a class="menu-link" href="index.html">Главная</a></li>
-				<li><a class="menu-link" href="catalog.html">Каталог</a></li>
-				<li><a class="menu-link" href="contacts.html">Контакты</a></li>
-			</ul> 		
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+	<div class="header1">
+		<img class="logo block2" src="{% static 'img/logo.png' %}" alt="logo" height="100">
+		<ul class="menu block">
+			 <li><a class="menu-link" href="{% url 'main:index' %}">Главная</a></li>
+			<li><a class="menu-link" href="{% url 'main:catalog' %}">Каталог</a></li>
+			<li><a class="menu-link" href="{% url 'main:contacts' %}">Контакты</a></li>
+			{% if user.is_authenticated %}
+                        <li>
+                <div class="dropdown">
+                    <a class="menu-link dropdown-toggle" href="" data-toggle="dropdown">
+                        {{ user.first_name|default:'Пользователь' }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{% url 'auth:user_profile' %}">
+                                профиль
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'orders:index' %}">
+                                заказы
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        {% endif %}
+        {% if user.is_superuser %}
+            <li><a class="menu-link" href="{% url 'myadmin:index' %}">
+                админка
+            </a></li>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <li><a class="menu-link" href="{% url 'auth:logout' %}">
+                выход
+            </a></li>
+        {% else %}
+           <li><a class="menu-link" href="{% url 'auth:login' %}">
+                вход
+            </a></li>
+        {% endif %}
+		</ul>
+		<a href="#" class="search"></a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'basket:index' %}" class="basket menu-link">
+                <span>{{ user.basket_cost|floatformat:0 }} руб ({{ user.basket_total_quantity }} шт)</span>
+            </a>
+        {% endif %}
+	</div>
+	<div class="">
+		{% include 'mainapp/includes/inc__menu_catalogs.html' %}
+	</div>
+{% if user.is_authenticated %}
+<nav class="navbar navbar-light bg-dark">
+	<div class="btn-group ml-auto">
+		<button class="btn btn-light btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
+			aria-expanded="false">
+			Корзина
+		</button>
+		<div class="dropdown-menu dropdown-menu-right basketPanel">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Имя</th>
+						<th scope="col">Цена</th>
+						<th scope="col">Количество</th>
+						<th scope="col"></th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+				<tfoot>
+					<tr>
+						<th colspan="2" scope="row">Итого:</th>
+						<td colspan="3">
+							<span class="total">0</span>
+							<i class="fas fa-ruble-sign"></i>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
 		</div>
-	<nav class="navbar navbar-light bg-dark">
-		<div class="btn-group ml-auto">
-			<button class="btn btn-light btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false">
-				Корзина
-			</button>
-			<div class="dropdown-menu dropdown-menu-right basketPanel">
-				<table class="table table-hover">
-					<thead>
-						<tr>
-							<th scope="col">ID</th>
-							<th scope="col">Имя</th>
-							<th scope="col">Цена</th>
-							<th scope="col">Количество</th>
-							<th scope="col"></th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-					<tfoot>
-						<tr>
-							<th colspan="2" scope="row">Итого:</th>
-							<td colspan="3">
-								<span class="total">0</span>
-								<i class="fas fa-ruble-sign"></i>
-							</td>
-						</tr>
-					</tfoot>
-				</table>
-			</div>
-		</div>
-	</nav>
-		<hr>
+	</div>
+</nav>
+{% endif %}
+	<hr>
 </div>
-	<main class="main container">
-		
-		<h1 class="h1-catalog">Каталог</h1>
-		<div class="block-main">
-			<img src="static/img/apple_iphone_xs_space.png" width="200" alt="apple_iphone_xs_space">
-			<div class="button-buy">
-				<p class="product-description-short"> Текст краткого <br>описания товара.</p> 
-				<p class="product-description-short description-price">Цена 20</p>
-				<button class="button button2" 
-						type="button" 
-						data-id="1"
-						data-price="20"
-						data-name="Товар 1">В корзину</button>
-			</div>
-			
-			<br>
-			<a href="iphone_black.html#black">описание товара</a>
-			<br>
-		</div>
-		<div class="block-main">
-			<img src="/static/img/apple_iphone_xs_space.png" width="200" alt="apple_iphone_xs_space">
-			<div class="button-buy">
-				<p class="product-description-short"> Текст краткого <br>описания товара.</p> 
-				<p class="product-description-short description-price">Цена 35</p>
-				<button class="button button2" 
-						type="button" 
-						data-id="1"
-						data-price="35"
-						data-name="Товар 2">В корзину</button>
-			</div>		
-			<br>
-			<a href="iphone_white.html#white">описание товара</a>
-			<br>
-		</div>
-		<div class="block-main">
-			<img src="/static/img/apple_iphone_xs_space.png" width="200" alt="apple_iphone_xs_space">
-			<div class="button-buy">
-				<p class="product-description-short"> Текст краткого <br>описания товара.</p> 
-				<p class="product-description-short description-price">Цена 42</p>
-				<button class="button button2" 
-						type="button" 
-						data-id="1"
-						data-price="42"
-						data-name="Товар 3">В корзину</button>
-			</div>
-			<br>
-			<a href="iphone_red.html#red">описание товара</a>
-			<br>
-		</div>
-		
-		
-		
-	</main>
-	<footer>
-		<div class="footer container">
-		
-			<p>«&copy; Все права защищены»</p>
-		</div>
-	</footer>		
-	    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <script src="scripts/app.js"></script>						
+<main class="main container">
 	
-</body>
-</html>				
+	<h1 class="h1-catalog">Хот Продукт</h1>
+
+	<div class="block">
+		<a href="{% url 'main:product_page' hot_product.pk %}">
+			<img src="/media/{{ hot_product.image }}" alt="" width="150px" height="175px">
+			<div class="text">
+				<h4>Цена {{ hot_product.price }} руб</h4>
+				<h4>{{ hot_product.name }}</h4>
+				<p>{{ hot_product.short_desc }}</p>
+			</div>
+		</a>
+	</div>
+	
+	
+</main>
+<footer>
+ 	{% include 'mainapp/includes/inc__footer.html' %}
+</footer>			
+
+{% endblock %}
