@@ -1,0 +1,14 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: 
+ =?utf-8?b?0J/QvtC00YLQstC10YDQttC00LXQvdC40LUg0YPRh9C10YLQvdC+0Lkg0LfQsNC/?=
+ =?utf-8?b?0LjRgdC4IHRlbWVtZQ==?=
+From: django@geekshop.local
+To: testmeme@gb.local
+Date: Sat, 26 Sep 2020 13:19:09 -0000
+Message-ID: <160112634910.3271.5292534819073041955@MacBook-Pro-user.local>
+
+Для подтверждения учетной записи tememe на портале http://localhost:8000 перейдите по ссылке: 
+http://localhost:8000/auth/user/verify/testmeme@gb.local/4c27f886bf7b161b9509cb031657740210b9f14c/
+-------------------------------------------------------------------------------

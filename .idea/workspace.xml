@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f250648b-6ed0-4d2e-bac8-9b5c0c30bbf6" name="Default Changelist" comment="first commit" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1ggzGnLy4CWiTbCK5nklf5ptMPZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/scripts" />
+    <property name="settings.editor.selected.configurable" value="com.leinardi.pycharm.pylint.PylintConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/scripts" />
+      <recent name="$PROJECT_DIR$/ordersapp/templates/ordersapp" />
+      <recent name="$PROJECT_DIR$/static/img" />
+      <recent name="$PROJECT_DIR$/static/fonts" />
+      <recent name="$PROJECT_DIR$/static/css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ordersapp/templates" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f250648b-6ed0-4d2e-bac8-9b5c0c30bbf6" name="Default Changelist" comment="" />
+      <created>1598550930306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598550930306</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <created>1602022894679</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602022894679</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.js" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="395" y="307" key="#Updates" timestamp="1600597610628">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="395" y="307" key="#Updates/0.23.1280.777@0.23.1280.777" timestamp="1600597610628" />
+    <state x="361" y="220" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600604557569">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="361" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1280.777@0.23.1280.777" timestamp="1600604557569" />
+    <state x="292" y="123" key="FileChooserDialogImpl" timestamp="1600885854189">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="292" y="123" key="FileChooserDialogImpl/0.23.1280.777@0.23.1280.777" timestamp="1600885854189" />
+    <state x="149" y="50" key="SettingsEditor" timestamp="1602022905796">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="149" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1602022905796" />
+    <state x="389" y="182" width="586" height="548" key="find.popup" timestamp="1599997439047">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="389" y="182" width="586" height="548" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1599997439047" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1599411882796">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1599411882796" />
+  </component>
+</project>
