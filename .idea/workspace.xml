@@ -76,7 +76,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602022981479</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="first commit">
+      <created>1602023862874</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602023862874</updated>
+    </task>
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1602023876968</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1602023876968</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -111,14 +125,22 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="292" y="123" key="FileChooserDialogImpl/0.23.1280.777@0.23.1280.777" timestamp="1600885854189" />
-    <state x="149" y="50" key="SettingsEditor" timestamp="1602022905796">
+    <state x="300" y="139" key="RollbackChangesDialog" timestamp="1602023656498">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="149" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1602022905796" />
+    <state x="300" y="139" key="RollbackChangesDialog/0.23.1280.777@0.23.1280.777" timestamp="1602023656498" />
+    <state x="149" y="50" key="SettingsEditor" timestamp="1602023888512">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="149" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1602023888512" />
     <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1602023031172">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1602023031172" />
+    <state x="443" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602023899090">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="443" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1280.777@0.23.1280.777" timestamp="1602023899090" />
     <state x="389" y="182" width="586" height="548" key="find.popup" timestamp="1599997439047">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
