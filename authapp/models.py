@@ -3,6 +3,7 @@ from django.db import models
 
 # Create your models here.
 from django.urls import reverse
+from django.utils.functional import cached_property
 from django.utils.timezone import now
 
 from geekshop import settings
@@ -46,11 +47,15 @@ class ShopUser(AbstractUser):
     class Meta:
         ordering = ['-is_active', '-is_superuser', '-is_staff', 'username']
 
+    @cached_property
+    def basket_items(self):
+        return self.basketitem_set.all()
+
     def basket_cost(self):
-        return sum(item.product.price * item.quantity for item in self.basketitem_set.all())
+        return sum(item.product.price * item.quantity for item in self.basket_items)
 
     def basket_total_quantity(self):
-        return sum(item.quantity for item in self.basketitem_set.all())
+        return sum(item.quantity for item in self.basket_items)
 
 class ShopUserProfile(models.Model):
     MALE = 'M'

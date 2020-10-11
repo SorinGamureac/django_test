@@ -15,7 +15,8 @@ from ordersapp.models import OrderItem
 
 @login_required
 def index(request):
-    basket_items = BasketItem.objects.filter(user=request.user)
+    # basket_items = BasketItem.objects.filter(user=request.user)
+    basket_items = request.user.basketitem_set.select_related().all()
     context = {'page_title': 'Каталог',
                'basket_items': basket_items,
                }

@@ -12,7 +12,17 @@
   <component name="ChangeListManager">
     <list default="true" id="f250648b-6ed0-4d2e-bac8-9b5c0c30bbf6" name="Default Changelist" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/authapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/basketapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basketapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/basketapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geekshop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/geekshop/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geekshop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/geekshop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/context_processors.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/context_processors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainapp/templates/mainapp/catalog_products.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainapp/templates/mainapp/catalog_products.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordersapp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ordersapp/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordersapp/templates/ordersapp/order_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/ordersapp/templates/ordersapp/order_form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1602023954665</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="first commit">
+      <created>1602109856084</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1602109856084</updated>
+    </task>
+    <task id="LOCAL-00007" summary="first commit">
+      <created>1602109867175</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1602109867175</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -147,10 +171,14 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="149" y="50" key="SettingsEditor/0.23.1280.777@0.23.1280.777" timestamp="1602023992332" />
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1602024054873">
+    <state x="417" y="134" key="VCS.ChangeListViewerDialog" timestamp="1602109843439">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
-    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1602024054873" />
+    <state x="417" y="134" key="VCS.ChangeListViewerDialog/0.23.1280.777@0.23.1280.777" timestamp="1602109843439" />
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2" timestamp="1602110067869">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="240" y="151" key="Vcs.Push.Dialog.v2/0.23.1280.777@0.23.1280.777" timestamp="1602110067869" />
     <state x="443" y="332" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1602109838155">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
@@ -159,6 +187,10 @@
       <screen x="0" y="23" width="1280" height="777" />
     </state>
     <state x="389" y="182" width="586" height="548" key="find.popup/0.23.1280.777@0.23.1280.777" timestamp="1599997439047" />
+    <state x="288" y="207" key="git4idea.merge.GitPullDialog" timestamp="1602109988141">
+      <screen x="0" y="23" width="1280" height="777" />
+    </state>
+    <state x="288" y="207" key="git4idea.merge.GitPullDialog/0.23.1280.777@0.23.1280.777" timestamp="1602109988141" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1599411882796">
       <screen x="0" y="23" width="1280" height="777" />
     </state>
